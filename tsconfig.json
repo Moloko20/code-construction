@@ -12,11 +12,11 @@
         "module": "CommonJS",
         "moduleResolution": "node",
         "paths": {
-            "App": ["src/App"],
-            "Components/*": ["src/Components/*"],
-            "Shared/*": ["src/Shared/*"],
-            "Services/*": ["src/Services/*"],
-            "Contexts/*": ["src/Contexts/*"]
+            "app": ["src/App"],
+            "components/*": ["src/components/*"],
+            "shared/*": ["src/shared/*"],
+            "services/*": ["src/services/*"],
+            "contexts/*": ["src/contexts/*"]
         },
         "resolveJsonModule": true,
         "noEmitOnError": true,

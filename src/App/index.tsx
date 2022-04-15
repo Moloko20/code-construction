@@ -1,19 +1,38 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// import { Catalog } from 'Components/Catalog'
-
-import './index.scss'
+import { Menu } from 'components/Menu'
+import { UsersList } from 'components/UsersList'
 
 function App() {
-    require('./index.scss')
+    require('./index.sass')
 
-    return <div>hi</div>
+    return (
+        <div>
+            <Menu />
+
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <UsersList />
+                        </>
+                    }
+                />
+                <Route path="/posts" element={<div>posts</div>} />
+                <Route path="/profile" element={<div>profile</div>} />
+            </Routes>
+        </div>
+    )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <StrictMode>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </StrictMode>,
 )
