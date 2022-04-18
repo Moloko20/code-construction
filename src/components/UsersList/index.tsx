@@ -1,5 +1,5 @@
 import React from 'react'
 
 export function UsersList() {
-    return <div>users</div>
+    return <section className="userslist">users</section>
 }
