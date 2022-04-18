@@ -16,7 +16,10 @@
             "components/*": ["src/components/*"],
             "shared/*": ["src/shared/*"],
             "services/*": ["src/services/*"],
-            "contexts/*": ["src/contexts/*"]
+            "contexts/*": ["src/contexts/*"],
+            "store": ["src/store"],
+            "hooks": ["src/hooks"],
+            "types/*": ["src/types/*"]
         },
         "resolveJsonModule": true,
         "noEmitOnError": true,
