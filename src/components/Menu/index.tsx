@@ -4,6 +4,21 @@ import { Link } from 'react-router-dom'
 function MenuComponent() {
     const [isActive, isActiveSet] = React.useState([true, false])
 
+    React.useEffect(() => {
+        switch (window.location.pathname) {
+            case '/':
+                isActiveSet([true, false])
+                break
+
+            case '/posts':
+                isActiveSet([false, true])
+                break
+
+            default:
+                break
+        }
+    }, [])
+
     require('./index.sass')
 
     return (
