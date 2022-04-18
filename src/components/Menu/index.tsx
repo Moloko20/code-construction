@@ -6,7 +6,7 @@ function MenuComponent() {
 
     return (
         <menu className="menu">
-            <div className="page-layout">
+            <div className="page__layout">
                 <ul className="menu-list">
                     <Link className="menu-list__link" to="/" onClick={() => {}}>
                         Users
