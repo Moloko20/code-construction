@@ -1,0 +1,74 @@
+.userslist
+    padding-top: 1rem
+    padding-bottom: 1rem
+
+    &-header
+        display: flex
+        align-items: end
+
+        svg
+            padding-left: 0.5rem
+
+        h1
+            padding-left: 1rem
+
+.table
+    width: 100%
+
+    margin-left: 1rem
+    margin-right: 1rem
+    margin-top: 2rem
+    margin-bottom: 2rem
+
+    box-sizing: border-box
+
+    &-head
+        tr
+            th
+                padding-left: 1rem
+                padding-right: 1rem
+
+                background-color: #bffff3
+                border-bottom: 2px solid #50f8ff
+
+                font-size: 1.6rem
+                font-weight: bold
+
+                text-align: left
+
+                
+
+    &-body
+        tr
+            td
+                padding-left: 1rem
+                padding-right: 1rem
+                padding-top: 1.5rem
+                padding-bottom: 1.5rem
+
+                background-color: #fff
+                border-bottom: 2px solid #50f8ff
+
+                font-size: 1.4rem
+                text-align: left
+
+    &-wrapper
+        max-width: 128rem
+        overflow: hidden
+
+    &__btn
+        padding-top: 1.5rem
+        padding-bottom: 1.5rem
+
+        background-color: inherit   
+
+        cursor: pointer
+
+        svg
+            margin-left: 1rem
+
+            transition: transform 0.1s ease
+        
+        &--active
+            svg
+                transform: rotate(-180deg)
