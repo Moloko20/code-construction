@@ -13,9 +13,6 @@ export const usersReducer = (state = defaultState, action: UsersAction): UsersTy
         case UsersActionTypes.FETCH_USERS:
             return { users: action.payload }
 
-        case UsersActionTypes.GET_USERS:
-            return { users: state.users }
-
         case UsersActionTypes.SET_USERS:
             return { users: action.payload }
 
