@@ -1,20 +1,22 @@
 import { PostsAction, PostsActionTypes } from 'types/posts'
 
 interface PostsType {
-    posts: any[]
+    defaultPosts: any[]
+    filteredPosts: any[]
 }
 
 const defaultState: PostsType = {
-    posts: [],
+    defaultPosts: [],
+    filteredPosts: [],
 }
 
 export const postsReducer = (state = defaultState, action: PostsAction): PostsType => {
     switch (action.type) {
         case PostsActionTypes.FETCH_POSTS:
-            return { posts: action.payload }
+            return { ...state, defaultPosts: action.payload }
 
         case PostsActionTypes.SET_POSTS:
-            return { posts: action.payload }
+            return { ...state, filteredPosts: action.payload }
 
         default:
             return state
