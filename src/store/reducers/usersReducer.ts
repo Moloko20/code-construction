@@ -1,20 +1,22 @@
 import { UsersAction, UsersActionTypes } from 'types/users'
 
 interface UsersType {
-    users: any[]
+    defaultUsers: any[]
+    filteredUsers: any[]
 }
 
 const defaultState: UsersType = {
-    users: [],
+    defaultUsers: [],
+    filteredUsers: [],
 }
 
 export const usersReducer = (state = defaultState, action: UsersAction): UsersType => {
     switch (action.type) {
         case UsersActionTypes.FETCH_USERS:
-            return { users: action.payload }
+            return { ...state, defaultUsers: action.payload }
 
         case UsersActionTypes.SET_USERS:
-            return { users: action.payload }
+            return { ...state, filteredUsers: action.payload }
 
         default:
             return state
