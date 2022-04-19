@@ -21,11 +21,17 @@ function App() {
     const dispatch = useAppDispatch()
 
     React.useEffect(() => {
-        getUsers().then(data => dispatch({ type: UsersActionTypes.FETCH_USERS, payload: data }))
+        getUsers().then(data => {
+            dispatch({ type: UsersActionTypes.FETCH_USERS, payload: data })
+            dispatch({ type: UsersActionTypes.SET_USERS, payload: data })
+        })
     }, [])
 
     React.useEffect(() => {
-        getPosts().then(data => dispatch({ type: PostsActionTypes.FETCH_POSTS, payload: data }))
+        getPosts().then(data => {
+            dispatch({ type: PostsActionTypes.FETCH_POSTS, payload: data })
+            dispatch({ type: PostsActionTypes.SET_POSTS, payload: data })
+        })
     }, [])
 
     require('./index.sass')
