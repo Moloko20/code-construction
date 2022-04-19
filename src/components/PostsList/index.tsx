@@ -5,6 +5,7 @@ import { useAppSelector, useAppDispatch } from 'hooks'
 import { PostsActionTypes } from 'types/posts'
 
 import { Search } from 'components/UI/Search'
+import { Pagination } from 'components/Pagination'
 
 export function PostsList() {
     const posts = useAppSelector(state => state.postsReducer.filteredPosts)
@@ -12,7 +13,13 @@ export function PostsList() {
 
     const defaultUsers = useAppSelector(state => state.usersReducer.defaultUsers)
 
+    const [currentPage, currentPageSet] = React.useState(1)
+    const postsPerPages = 16
+
     const dispatch = useAppDispatch()
+
+    const lastPostId = currentPage * postsPerPages
+    const firstPostId = lastPostId - postsPerPages
 
     const search = (event: React.ChangeEvent<HTMLInputElement>) => {
         const filteredPosts = defaultPosts.filter(post =>
@@ -53,7 +60,7 @@ export function PostsList() {
                 </div>
 
                 <div className="postslist-wrapper">
-                    {posts.map(post => {
+                    {posts.slice(firstPostId, lastPostId).map(post => {
                         const author = defaultUsers.find(user => user.id === post.userId)
 
                         return (
@@ -72,6 +79,11 @@ export function PostsList() {
                         )
                     })}
                 </div>
+
+                <Pagination
+                    pagesCount={posts.length / postsPerPages}
+                    changePageHandler={currentPageSet}
+                />
             </div>
         </section>
     )
