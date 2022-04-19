@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 
 import { useAppDispatch } from 'hooks'
 
@@ -43,7 +43,6 @@ function App() {
             <Routes>
                 <Route path="/" element={<UsersList />} />
                 <Route path="/posts" element={<PostsList />} />
-                <Route path="/profile" element={<div>profile</div>} />
             </Routes>
         </div>
     )
@@ -53,9 +52,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <StrictMode>
         <Provider store={store}>
-            <BrowserRouter>
+            <HashRouter>
                 <App />
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
     </StrictMode>,
 )
